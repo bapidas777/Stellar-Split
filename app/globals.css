@@ -6,3 +6,9 @@
   --color-cotton-lavender: #e6e6fa;
   --color-cotton-bg: #ffd1dc;
 }
+
+body {
+  background-color: var(--color-cotton-bg);
+  min-height: 100vh;
+  font-family: 'Outfit', sans-serif;
+}
