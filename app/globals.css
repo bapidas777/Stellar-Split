@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cotton-pink: #ffb6c1;
+  --color-cotton-blue: #add8e6;
+  --color-cotton-lavender: #e6e6fa;
+  --color-cotton-bg: #ffd1dc;
+}
