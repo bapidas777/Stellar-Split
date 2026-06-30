@@ -12,3 +12,17 @@ export async function getTestnetBalance(publicKey: string): Promise<string> {
     return "0";
   }
 }
+
+import { TransactionBuilder, Asset, Operation, Transaction } from "@stellar/stellar-sdk";
+
+export async function buildTransaction(senderPublicKey: string, recipientPublicKey: string, amount: string) {
+  const sourceAccount = await server.loadAccount(senderPublicKey);
+  return new TransactionBuilder(sourceAccount, { fee: "100", networkPassphrase: NETWORK_PASSPHRASE })
+    .addOperation(Operation.payment({ destination: recipientPublicKey, asset: Asset.native(), amount: amount }))
+    .setTimeout(30).build();
+}
+
+export async function submitTransaction(signedTxXdr: string) {
+  const transaction = TransactionBuilder.fromXDR(signedTxXdr, NETWORK_PASSPHRASE);
+  return await server.submitTransaction(transaction as Transaction);
+}
