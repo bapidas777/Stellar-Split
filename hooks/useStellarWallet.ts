@@ -18,5 +18,15 @@ export function useStellarWallet() {
     }
   }, []);
   
-  return { publicKey, balance };
+  
+  const connect = async () => {
+    const { address } = await StellarWalletsKit.fetchAddress();
+    setPublicKey(address);
+  };
+  const disconnect = async () => {
+    await StellarWalletsKit.disconnect();
+    setPublicKey(null);
+  };
+  return { publicKey, balance, connect, disconnect };
+
 }
