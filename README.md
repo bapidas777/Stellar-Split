@@ -8,3 +8,8 @@ A premium, tactile decentralized application built on the Stellar Testnet for fa
 - Balance Handling
 - Transaction Flow
 - Development Standards
+
+## 🚀 Setup Instructions
+1. Clone repo
+2. npm install
+3. npm run dev
