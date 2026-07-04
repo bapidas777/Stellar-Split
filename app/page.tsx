@@ -97,17 +97,20 @@ export default function Home() {
   return (
     <>
       <header className="shrink-0 z-50 bg-[var(--color-cotton-bg)]/80 backdrop-blur-md border-b border-slate-300 shadow-sm felt-texture">
-        <nav className="flex justify-between items-center w-full px-[var(--spacing-container-padding)] py-4 max-w-7xl mx-auto">
-          <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-slate-800 font-bold text-3xl drop-shadow-sm">
-              cloud
-            </span>
-            <h1 className="font-headline-md text-[var(--text-headline-md)] font-bold tracking-tight text-slate-900 drop-shadow-sm">
-              Stellar Split
-            </h1>
+        <nav className="flex flex-col sm:flex-row justify-between items-center w-full px-[var(--spacing-container-padding)] py-4 max-w-7xl mx-auto gap-4">
+          <div className="flex items-center justify-between w-full sm:w-auto">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-slate-800 font-bold text-3xl drop-shadow-sm">
+                cloud
+              </span>
+              <h1 className="font-headline-md text-[var(--text-headline-md)] font-bold tracking-tight text-slate-900 drop-shadow-sm">
+                Stellar Split
+              </h1>
+            </div>
+            {/* Wallet button moved here for mobile if needed, or keep it below */}
           </div>
           
-          <div className="hidden md:flex gap-[var(--spacing-stack-md)] items-center">
+          <div className="flex w-full sm:w-auto justify-center gap-[var(--spacing-stack-md)] items-center order-3 sm:order-2">
             <button 
               onClick={() => setActiveTab('split')}
               className={`font-label-lg text-[var(--text-label-lg)] transition-colors drop-shadow-sm pb-1 ${activeTab === 'split' ? 'text-slate-800 border-b-2 border-slate-800' : 'text-slate-600 hover:text-slate-900'}`}
@@ -122,7 +125,7 @@ export default function Home() {
             </button>
           </div>
 
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-4 items-center order-2 sm:order-3">
             {publicKey ? (
               <div className="flex items-center gap-4 bg-[var(--color-cotton-pink)]/30 px-4 py-2 rounded-full felt-texture inset-puffy border border-slate-200">
                 <div className="flex flex-col text-right">
@@ -151,16 +154,16 @@ export default function Home() {
       </header>
 
       <div className="flex-1 overflow-y-auto flex flex-col">
-        <main className="py-10 flex justify-center items-start px-[var(--spacing-container-padding)] flex-1">
+        <main className="py-6 sm:py-10 flex justify-center items-start px-4 sm:px-[var(--spacing-container-padding)] flex-1">
         {activeTab === 'split' ? (
-          <div id="main-card" className="w-full max-w-2xl felt-texture bg-[var(--color-cotton-pink)] rounded-[3rem] puffy-shadow p-12 flex flex-col gap-10">
+          <div id="main-card" className="w-full max-w-2xl felt-texture bg-[var(--color-cotton-pink)] rounded-[2rem] sm:rounded-[3rem] puffy-shadow p-6 sm:p-12 flex flex-col gap-8 sm:gap-10">
           
           <div className="flex flex-col gap-2 text-center">
             <h2 className="font-headline-lg text-[var(--text-headline-lg)] text-slate-900 drop-shadow-sm">Divide & Conquer</h2>
             <p className="font-body-md text-slate-700 font-medium">Calculate and send your share in seconds.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
             {/* Bill Amount Input Area */}
             <div className="flex flex-col gap-[var(--spacing-stack-sm)]">
               <label className="font-label-lg text-[var(--text-label-lg)] text-slate-800 uppercase tracking-widest px-2 drop-shadow-sm">Total Bill Amount</label>
@@ -264,7 +267,7 @@ export default function Home() {
           </button>
         </div>
         ) : (
-          <div className="w-full max-w-2xl felt-texture bg-[var(--color-cotton-pink)] rounded-[3rem] puffy-shadow p-12 flex flex-col gap-8">
+          <div className="w-full max-w-2xl felt-texture bg-[var(--color-cotton-pink)] rounded-[2rem] sm:rounded-[3rem] puffy-shadow p-6 sm:p-12 flex flex-col gap-6 sm:gap-8">
             <div className="flex flex-col gap-2 text-center">
               <h2 className="font-headline-lg text-[var(--text-headline-lg)] text-slate-900 drop-shadow-sm">Transaction History</h2>
               <p className="font-body-md text-slate-700 font-medium">Your recent payments on the Stellar testnet.</p>
