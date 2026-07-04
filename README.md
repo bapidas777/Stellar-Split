@@ -4,6 +4,10 @@
   <p><strong>A premium, tactile decentralized application built on the Stellar Testnet for fairly dividing expenses.</strong></p>
 </div>
 
+<div align="center">
+  <strong>🌐 Live Demo: <a href="https://stellar-split-rho.vercel.app/">https://stellar-split-rho.vercel.app/</a></strong>
+</div>
+
 ---
 
 ## 📖 Project Description
